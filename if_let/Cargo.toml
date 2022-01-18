@@ -1,5 +1,5 @@
 [package]
-name = "defining-structs"
+name = "if_let"
 version = "0.1.0"
 edition = "2021"
 

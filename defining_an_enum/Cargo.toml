@@ -1,5 +1,5 @@
 [package]
-name = "example-structs"
+name = "defining_an_enum"
 version = "0.1.0"
 edition = "2021"
 
