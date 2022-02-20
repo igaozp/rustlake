@@ -17,6 +17,8 @@ fn main() {
         ),
     };
     println!("New article available! {}", article.summarize());
+
+    notify(&article);
 }
 
 pub trait Summary {
@@ -59,4 +61,12 @@ impl Summary for Tweet {
     fn summarize(&self) -> String {
         format!("{}: {}", self.username, self.content)
     }
+}
+
+// pub fn notify(item: &impl Summary) {
+//     println!("Breaking news! {}", item.summarize());
+// }
+
+pub fn notify<T: Summary>(item: &T) {
+    println!("Breaking news! {}", item.summarize());
 }
