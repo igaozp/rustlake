@@ -27,4 +27,10 @@ fn main() {
             panic!("Problem opening the file: {:?}", error);
         }
     });
+
+    // return file or auto panic
+    let f = File::open("hello.txt").unwrap();
+
+    // return file or auto panic with custom message
+    let f = File::open("hello.txt").expect("Failed to open hello.txt");
 }
