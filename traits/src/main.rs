@@ -19,6 +19,8 @@ fn main() {
     println!("New article available! {}", article.summarize());
 
     notify(&article);
+
+    notify(&returns_summarizable());
 }
 
 pub trait Summary {
@@ -69,4 +71,15 @@ impl Summary for Tweet {
 
 pub fn notify<T: Summary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
+}
+
+fn returns_summarizable() -> impl Summary {
+    Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            "of course, as you probably already know, people"
+        ),
+        reply: false,
+        retweet: false,
+    }
 }
