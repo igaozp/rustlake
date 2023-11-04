@@ -1,6 +1,6 @@
-mod utils;
-
 use wasm_bindgen::prelude::*;
+
+mod utils;
 
 #[wasm_bindgen]
 extern "C" {
@@ -8,6 +8,6 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, wasm-game-of-life!");
+pub fn greet(name: &str) {
+    alert(&format!("Hello, {} to wasm-game-of-life!", name));
 }
